@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top General News from all across the Globe </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css"> @media (min-width: 1200px) {
+    .container{
+        max-width: 1290px;
+    }
+}
+span { display: flex;
+       justify-content: center }
+
+.text {
+
+    font-family: verdana;
+    font-size: 6em;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+</style>
+</head>
+<body class="solid" >
+{% load static %}
+<div class="jumbotron" style="background-image: url({% static 'tc.jpg' %}); color:black,min-height: 300;">
+
+
+    <span class="text">
+        Top General News
+   </span>
+</div>
+
+<center>
+    <a class="btn btn-primary btn-lg" role="button" href="http://127.0.0.1:8000/" style="font-weight: 500;font-size: 28px; border-radius: 10px; border: none;  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);">Home</a>
+     &nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="btn btn-primary btn-lg" role="button" href="http://127.0.0.1:8000/technology" style="font-weight: 500;font-size: 28px; border-radius: 10px; border: none;  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); ">Technology</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="btn btn-danger btn-lg" role="button" href="http://127.0.0.1:8000/sports" style="font-weight: 500;font-size: 28px; border-radius: 10px; border: none;  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);">Sports</a>
+	 &nbsp;&nbsp;&nbsp;&nbsp;
+	<a class="btn btn-primary btn-lg" role="button" href="http://127.0.0.1:8000/business" style="font-weight: 500;font-size: 28px; border-radius: 10px; border: none;  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);">Business</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="btn btn-danger btn-lg" role="button" href="http://127.0.0.1:8000/science" style="font-weight: 500;font-size: 28px; border-radius: 10px; border: none;  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);">Science</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</center><br><br>
+<div class="container">
+  <div class="row">
+
+{% for a in articles %}
+<div class="col-lg-4" >
+<div class="thumbnail" style="border: none;  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.9);">
+
+<a href="{{a.url}}" target="_blank">
+<br><h1> {{a.title}}</h1> <br>
+<img src="{{a.photo_url}}" alt="Image Not Available currently" width="390" height="240">
+</a>
+<br><div class="caption" style="font-size: 20px;">
+<b>Description: </b>{{a.description}}
+    </div>
+</div>
+</div>
+
+{% endfor %}
+
+</div></div>
+</body>
+</html>
